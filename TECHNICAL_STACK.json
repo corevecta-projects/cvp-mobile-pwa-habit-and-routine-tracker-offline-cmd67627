@@ -1,0 +1,14 @@
+{
+  "language": "TypeScript",
+  "framework": "NestJS",
+  "buildTools": [
+    "npm",
+    "Webpack"
+  ],
+  "uiLibrary": "Chakra UI",
+  "storage": [
+    "PostgreSQL",
+    "Redis"
+  ],
+  "updatedAt": "2025-07-17T17:38:09.915Z"
+}

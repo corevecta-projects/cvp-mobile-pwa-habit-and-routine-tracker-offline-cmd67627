@@ -1,0 +1,78 @@
+[
+  {
+    "id": "cmd69ankb0004qjwhgoc0fc1f",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Habit Creation & Management",
+    "description": "Create unlimited habits with custom names, emojis, and schedules",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "MODERATE",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "IndexedDB",
+      "Emoji picker"
+    ],
+    "apiCalls": [],
+    "userValue": "Core functionality for habit tracking",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0005qjwhk9txfxud",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Streak Tracking",
+    "description": "Visual streak counters with milestone celebrations",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "SIMPLE",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "Date calculations",
+      "Animation library"
+    ],
+    "apiCalls": [],
+    "userValue": "Motivation through visual progress",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0006qjwhsxx49yrn",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Offline Notifications",
+    "description": "Local notifications without server dependency",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "COMPLEX",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "Service Worker",
+      "Notification API"
+    ],
+    "apiCalls": [],
+    "userValue": "Timely reminders for ADHD users",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0007qjwh2zs5wb3c",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Smart Reminders",
+    "description": "ML-based reminder timing optimization",
+    "type": "ADVANCED",
+    "priority": "NICE_TO_HAVE",
+    "complexity": "VERY_COMPLEX",
+    "isMvp": false,
+    "dataFlow": null,
+    "dependencies": [
+      "TensorFlow.js",
+      "Usage patterns"
+    ],
+    "apiCalls": [],
+    "userValue": "Personalized reminder timing",
+    "usageFrequency": "WEEKLY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  }
+]

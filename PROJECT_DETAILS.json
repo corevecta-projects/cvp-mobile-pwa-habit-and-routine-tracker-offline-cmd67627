@@ -1,0 +1,50 @@
+{
+  "project": {
+    "id": "cmd67627z000vqjs9b95usyvt",
+    "name": "Habit and routine tracker offline",
+    "description": "Streaks + custom emojis + offline alerts",
+    "useCase": "Habit and routine tracker offline",
+    "uniqueAngle": "Streaks + custom emojis + offline alerts",
+    "whyElite": "",
+    "createdAt": "2025-07-16T16:50:17.664Z",
+    "updatedAt": "2025-07-17T15:38:43.917Z"
+  },
+  "platform": {
+    "id": "cmd67629a001hqjs986r7zo84",
+    "name": "Mobile PWA",
+    "slug": "mobile-pwa"
+  },
+  "category": {
+    "id": "cmd6762iy005jqjs9ltioi2qe",
+    "name": "Business & Entrepreneurship",
+    "slug": "business-entrepreneurship"
+  },
+  "targetUsers": [
+    {
+      "id": "cmd676280000wqjs9ksmcqnn7",
+      "slug": "adhd-users",
+      "name": "ADHD Users",
+      "description": null,
+      "createdAt": "2025-07-16T16:50:17.665Z",
+      "updatedAt": "2025-07-16T17:05:27.563Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": "cmd67625w0006qjs9p4i68g1j",
+      "slug": "defi",
+      "name": "DeFi",
+      "category": "FEATURE",
+      "createdAt": "2025-07-16T16:50:17.589Z",
+      "updatedAt": "2025-07-16T17:05:28.435Z"
+    },
+    {
+      "id": "cmd67626g000cqjs9t5eof7k9",
+      "slug": "offline-first",
+      "name": "Offline-First",
+      "category": "FEATURE",
+      "createdAt": "2025-07-16T16:50:17.609Z",
+      "updatedAt": "2025-07-16T17:05:28.436Z"
+    }
+  ]
+}

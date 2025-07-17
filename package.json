@@ -1,0 +1,24 @@
+{
+  "name": "mobile-pwa-habit-and-routine-tracker-offline-cmd67627",
+  "version": "0.0.1",
+  "description": "Streaks + custom emojis + offline alerts",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.10",
+    "@nestjs/core": "^10.3.10",
+    "@nestjs/platform-express": "^10.3.10",
+    "@nestjs/swagger": "^7.4.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.2",
+    "@types/node": "^20.14.10",
+    "typescript": "^5.6.0"
+  }
+}
