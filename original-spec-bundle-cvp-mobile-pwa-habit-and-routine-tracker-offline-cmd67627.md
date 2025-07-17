@@ -1,0 +1,848 @@
+# original-spec-bundle-cvp-mobile-pwa-habit-and-routine-tracker-offline-cmd67627.md
+
+## FILE: AI_PROJECT_PROMPT.md
+
+# AI Project Prompt
+
+## Project: Habit and routine tracker offline
+
+### Description
+Streaks + custom emojis + offline alerts
+
+### Use Case
+Habit and routine tracker offline
+
+### Unique Angle
+Streaks + custom emojis + offline alerts
+
+### Why Elite
+
+
+### Technical Requirements
+- Platform: Mobile PWA
+- Category: Business & Entrepreneurship
+- Type: mobile-pwa
+
+### Implementation Guidelines
+1. Follow the project structure provided
+2. Implement all features listed in PROJECT_DETAILS.json
+3. Use modern best practices for Mobile PWA development
+4. Ensure the code is production-ready
+5. Include proper error handling and validation
+6. Add comprehensive documentation
+
+### Key Features to Implement
+- Habit Creation & Management: Create unlimited habits with custom names, emojis, and schedules
+- Streak Tracking: Visual streak counters with milestone celebrations
+- Offline Notifications: Local notifications without server dependency
+- Smart Reminders: ML-based reminder timing optimization
+
+### Target Users
+- ADHD Users
+
+---
+This prompt can be used to regenerate or enhance the project implementation.
+
+## FILE: BLUEPRINT.json
+
+{
+  "id": "cmd69ank00001qjwh6xjqj1ki",
+  "projectId": "cmd67627z000vqjs9b95usyvt",
+  "analyzedAt": "2025-07-16T17:49:51.168Z",
+  "analysisVersion": "1.0",
+  "promptVersion": "1.0",
+  "featureSpecs": {
+    "coreFeatures": [
+      {
+        "name": "Habit Creation & Management",
+        "dataFlow": "User input -> Validation -> IndexedDB -> UI update",
+        "constraints": "Max 1000 habits, emoji picker with 500+ options",
+        "description": "Create unlimited habits with custom names, emojis, and schedules",
+        "functionality": "CRUD operations for habits stored in IndexedDB"
+      },
+      {
+        "name": "Streak Tracking",
+        "dataFlow": "Daily check -> Streak calculation -> Visual update -> Achievement check",
+        "constraints": "Streak data stored for 2 years, instant calculation",
+        "description": "Visual streak counters with milestone celebrations",
+        "functionality": "Calculate consecutive days, show progress bars, trigger celebrations"
+      },
+      {
+        "name": "Offline Notifications",
+        "dataFlow": "Schedule set -> Service worker registration -> Local notification",
+        "constraints": "Max 50 notifications per day, respect OS quiet hours",
+        "description": "Local notifications without server dependency",
+        "functionality": "Service worker scheduled notifications, customizable per habit"
+      },
+      {
+        "name": "ADHD-Friendly Interface",
+        "dataFlow": "Settings -> Theme application -> Accessibility features",
+        "constraints": "WCAG AAA compliance, 48px minimum touch targets",
+        "description": "High contrast, large touch targets, minimal distractions",
+        "functionality": "Simplified UI with focus mode, reduced cognitive load"
+      },
+      {
+        "name": "Progress Visualization",
+        "dataFlow": "Habit data -> Aggregation -> Chart rendering",
+        "constraints": "Render < 100ms, support 365 days of data",
+        "description": "Charts and graphs showing habit completion rates",
+        "functionality": "Canvas-based charts, weekly/monthly/yearly views"
+      }
+    ],
+    "technicalSpecs": {
+      "inputFormats": [
+        "Manual entry",
+        "Voice input",
+        "Quick tap"
+      ],
+      "outputFormats": [
+        "JSON",
+        "CSV",
+        "PDF",
+        "PNG charts"
+      ],
+      "fileSizeLimits": {
+        "appSize": "10MB",
+        "indexedDB": "500MB",
+        "localStorage": "50MB"
+      },
+      "performanceTargets": {
+        "dataSync": "< 200ms",
+        "chartRender": "< 100ms",
+        "initialLoad": "< 2s",
+        "interaction": "< 50ms"
+      },
+      "offlineCapabilities": {
+        "dataSync": "Optional P2P sync",
+        "fullFunctionality": true,
+        "notificationSupport": true
+      }
+    },
+    "advancedFeatures": [
+      {
+        "name": "Habit Templates",
+        "description": "Pre-built habit templates for common ADHD challenges",
+        "functionality": "Template library with categories like medication, hydration, exercise"
+      },
+      {
+        "name": "Accountability Partners",
+        "description": "Share progress via encrypted links (no account needed)",
+        "functionality": "Generate shareable links with E2E encrypted progress data"
+      },
+      {
+        "name": "Smart Reminders",
+        "description": "ML-based reminder timing optimization",
+        "functionality": "Learn user patterns, suggest optimal reminder times"
+      },
+      {
+        "name": "Reward System",
+        "description": "Gamification with custom rewards and achievements",
+        "functionality": "Points, badges, custom reward definitions"
+      },
+      {
+        "name": "Data Export & Backup",
+        "description": "Export all data in multiple formats",
+        "functionality": "JSON, CSV, PDF reports with charts"
+      }
+    ]
+  },
+  "userStories": {
+    "edgeCases": [
+      {
+        "handling": "Recalculate streaks based on local midnight, show warning",
+        "scenario": "Device time zone change"
+      },
+      {
+        "handling": "Archive old data, prompt for cleanup, maintain recent 90 days",
+        "scenario": "Storage quota exceeded"
+      },
+      {
+        "handling": "In-app reminders fallback, educational prompt for enabling",
+        "scenario": "Notification permissions denied"
+      }
+    ],
+    "onboarding": {
+      "steps": [
+        "Welcome with ADHD-friendly tips",
+        "Create first habit with guided setup",
+        "Set up first reminder",
+        "Try quick-log feature",
+        "Customize theme and rewards"
+      ]
+    },
+    "accessibility": {
+      "wcagLevel": "AAA",
+      "keyboardNav": "Full keyboard navigation with visible focus indicators",
+      "screenReader": "Comprehensive ARIA labels, live regions for updates",
+      "colorContrast": "8.5:1 ratio, high contrast mode, deuteranopia-safe palette",
+      "reducedMotion": "Respect prefers-reduced-motion, disable celebrations"
+    },
+    "primaryStories": [
+      {
+        "story": "As an adult with ADHD, I want to track my medication schedule so that I never miss a dose",
+        "persona": "ADHD Adult",
+        "acceptanceCriteria": [
+          "Set daily medication reminder",
+          "See visual confirmation",
+          "Track adherence stats"
+        ]
+      },
+      {
+        "story": "As a student with ADHD, I want visual rewards for completing tasks so that I stay motivated",
+        "persona": "ADHD Student",
+        "acceptanceCriteria": [
+          "Earn points for habits",
+          "Unlock achievements",
+          "Customize rewards"
+        ]
+      },
+      {
+        "story": "As a parent with ADHD, I want simple one-tap logging so that tracking doesn't become a chore",
+        "persona": "ADHD Parent",
+        "acceptanceCriteria": [
+          "Quick-log from notification",
+          "Bulk update missed days",
+          "Minimal UI friction"
+        ]
+      }
+    ]
+  },
+  "userFlows": {
+    "uiLayout": {
+      "animations": {
+        "habitComplete": "Satisfying check animation",
+        "progressUpdate": "Smooth chart transitions",
+        "streakCelebration": "Confetti burst (can disable)"
+      },
+      "mainScreen": {
+        "body": "Habit cards with big tap targets",
+        "footer": "Quick-add FAB and nav",
+        "header": "Minimal with date and streak summary",
+        "layout": "Single column with cards"
+      },
+      "colorScheme": {
+        "dark": "True black OLED-friendly",
+        "light": "High contrast pastels",
+        "custom": "User-defined with preview"
+      }
+    },
+    "primaryJourney": [
+      "Open app (instant load from cache)",
+      "See today's habits dashboard",
+      "Tap habit to mark complete",
+      "See streak animation",
+      "Check progress chart",
+      "Set reminder for tomorrow"
+    ],
+    "informationArchitecture": {
+      "mainNav": [
+        "Today",
+        "Habits",
+        "Progress",
+        "Rewards"
+      ],
+      "settings": [
+        "Notifications",
+        "Theme",
+        "Backup",
+        "About"
+      ],
+      "quickActions": [
+        "Quick log",
+        "Add habit",
+        "View stats"
+      ]
+    }
+  },
+  "implementation": {
+    "techStack": {
+      "pwa": "Workbox 7.0",
+      "styling": "CSS Modules + PostCSS",
+      "testing": "Vitest + Testing Library",
+      "language": "TypeScript 5.3",
+      "buildTool": "Vite 5.0",
+      "framework": "React 18.2",
+      "stateManagement": "Zustand 4.4"
+    },
+    "storageStrategy": {
+      "backup": "Export to encrypted JSON file",
+      "primary": "IndexedDB with Dexie.js",
+      "migration": "Versioned schema with auto-migration",
+      "structure": "Habits table, Completions table, Settings table"
+    },
+    "dataArchitecture": "\ninterface HabitData {\n  id: string;\n  name: string;\n  emoji: string;\n  color: string;\n  schedule: Schedule;\n  reminders: Reminder[];\n  history: CompletionRecord[];\n  streak: StreakData;\n  created: Date;\n  modified: Date;\n}\n\ninterface Schedule {\n  frequency: 'daily' | 'weekly' | 'custom';\n  daysOfWeek?: number[];\n  customPattern?: string;\n}\n\ninterface CompletionRecord {\n  date: string; // YYYY-MM-DD\n  completed: boolean;\n  timestamp?: number;\n  note?: string;\n}\n    ",
+    "performanceOptimization": {
+      "caching": "Aggressive PWA caching, stale-while-revalidate",
+      "rendering": "Virtual scrolling for long lists",
+      "computation": "Web Worker for stats calculation",
+      "lazyLoading": "Route-based splitting, dynamic imports"
+    }
+  },
+  "monetization": {
+    "model": "Freemium with one-time purchase",
+    "tiers": {
+      "pro": {
+        "price": 14.99,
+        "value": "One-time purchase, lifetime updates",
+        "features": [
+          "Unlimited habits",
+          "All templates",
+          "Advanced analytics",
+          "Custom themes",
+          "Priority support"
+        ]
+      },
+      "free": {
+        "features": [
+          "5 habits",
+          "Basic streaks",
+          "Daily reminders"
+        ],
+        "limitations": "No templates, basic themes, limited export"
+      },
+      "family": {
+        "price": 24.99,
+        "value": "Perfect for ADHD families",
+        "features": [
+          "5 device licenses",
+          "Family dashboard",
+          "Shared templates"
+        ]
+      }
+    },
+    "paymentProvider": "Paddle",
+    "licenseValidation": "\n// Client-side license validation\nasync function validateLicense(key: string): Promise<boolean> {\n  const hash = await crypto.subtle.digest('SHA-256', \n    new TextEncoder().encode(key + SALT));\n  return checksum(hash) === expectedChecksum;\n}\n    "
+  },
+  "extensibility": {
+    "exportAPI": {
+      "formats": "JSON, CSV, PDF, Health app integration",
+      "automation": "Shortcuts/Tasker integration"
+    },
+    "themeEngine": {
+      "fontChoice": "Dyslexia-friendly fonts included",
+      "customColors": "Full color customization",
+      "layoutDensity": "Compact/comfortable/spacious"
+    },
+    "widgetSupport": {
+      "ios": "Lock screen widgets for quick logging",
+      "android": "Home screen widgets with streak display"
+    }
+  },
+  "validation": {
+    "qualityMetrics": {
+      "loadTime": "< 2s on 3G",
+      "crashFree": "99.9%",
+      "errorRate": "< 0.1%",
+      "frameRate": "60fps for animations"
+    },
+    "testingStrategy": {
+      "e2e": "Playwright for PWA installation and notifications",
+      "unit": "95% coverage target with Vitest",
+      "integration": "Critical user flows with Testing Library",
+      "performance": "Lighthouse CI with PWA audits"
+    }
+  },
+  "security": {
+    "securityMeasures": {
+      "xss": "Content Security Policy, sanitization",
+      "storage": "Encrypted export files",
+      "updates": "Signed updates only",
+      "inputValidation": "Strict validation on all inputs"
+    },
+    "privacyImplementation": {
+      "telemetry": "Zero telemetry, no analytics",
+      "encryption": "Optional device encryption",
+      "dataStorage": "All data local, no servers",
+      "permissions": "Minimal - only notifications"
+    }
+  },
+  "goToMarket": {
+    "launchStrategy": {
+      "pricing": "Launch week 50% off",
+      "channels": [
+        "ADHD subreddits",
+        "ProductHunt",
+        "ADHD influencers"
+      ],
+      "messaging": "Built by ADHD developer for ADHD users"
+    },
+    "uniqueSellingPoints": [
+      "100% offline - your data never leaves your device",
+      "Designed specifically for ADHD brains",
+      "No subscriptions - one-time purchase",
+      "Works without internet forever",
+      "ADHD-friendly UI with minimal distractions"
+    ],
+    "targetMarketAnalysis": {
+      "marketSize": "15M+ adults with ADHD in US alone",
+      "competition": "Habitica (gamified), Streaks (iOS only)",
+      "primaryPersona": "Adults with ADHD (25-45)",
+      "uniquePosition": "Only ADHD-specific offline habit tracker"
+    }
+  },
+  "roadmap": {
+    "phases": [
+      {
+        "name": "MVP - Core Habits",
+        "weeks": "1-4",
+        "deliverables": [
+          "Basic habit CRUD",
+          "Simple streaks",
+          "Local notifications",
+          "PWA setup"
+        ]
+      },
+      {
+        "name": "Enhancement - ADHD Features",
+        "weeks": "5-8",
+        "deliverables": [
+          "Templates",
+          "Advanced reminders",
+          "Analytics",
+          "Themes"
+        ]
+      },
+      {
+        "name": "Growth - Ecosystem",
+        "weeks": "9-12",
+        "deliverables": [
+          "Widgets",
+          "Share features",
+          "Import/export",
+          "Integrations"
+        ]
+      }
+    ],
+    "successMetrics": {
+      "reviews": "4.5+ star average",
+      "downloads": "10K in first month",
+      "retention": "60% 30-day retention",
+      "conversion": "10% free to paid"
+    }
+  },
+  "createdAt": "2025-07-16T17:49:51.168Z",
+  "updatedAt": "2025-07-16T17:49:51.168Z",
+  "techStack": {
+    "id": "cmd69ank80003qjwhmy8qihrw",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "framework": "React",
+    "language": "TypeScript",
+    "buildTools": [
+      "Vite"
+    ],
+    "storage": [
+      "IndexedDB",
+      "LocalStorage"
+    ],
+    "mlRuntime": null,
+    "uiLibrary": "CSS Modules",
+    "loadTimeTarget": 2000,
+    "memoryLimit": 128,
+    "offlineStorage": 500,
+    "createdAt": "2025-07-16T17:49:51.176Z"
+  },
+  "features": [
+    {
+      "id": "cmd69ankb0004qjwhgoc0fc1f",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "name": "Habit Creation & Management",
+      "description": "Create unlimited habits with custom names, emojis, and schedules",
+      "type": "CORE",
+      "priority": "MUST_HAVE",
+      "complexity": "MODERATE",
+      "isMvp": true,
+      "dataFlow": null,
+      "dependencies": [
+        "IndexedDB",
+        "Emoji picker"
+      ],
+      "apiCalls": [],
+      "userValue": "Core functionality for habit tracking",
+      "usageFrequency": "DAILY",
+      "createdAt": "2025-07-16T17:49:51.179Z"
+    },
+    {
+      "id": "cmd69ankb0005qjwhk9txfxud",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "name": "Streak Tracking",
+      "description": "Visual streak counters with milestone celebrations",
+      "type": "CORE",
+      "priority": "MUST_HAVE",
+      "complexity": "SIMPLE",
+      "isMvp": true,
+      "dataFlow": null,
+      "dependencies": [
+        "Date calculations",
+        "Animation library"
+      ],
+      "apiCalls": [],
+      "userValue": "Motivation through visual progress",
+      "usageFrequency": "DAILY",
+      "createdAt": "2025-07-16T17:49:51.179Z"
+    },
+    {
+      "id": "cmd69ankb0006qjwhsxx49yrn",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "name": "Offline Notifications",
+      "description": "Local notifications without server dependency",
+      "type": "CORE",
+      "priority": "MUST_HAVE",
+      "complexity": "COMPLEX",
+      "isMvp": true,
+      "dataFlow": null,
+      "dependencies": [
+        "Service Worker",
+        "Notification API"
+      ],
+      "apiCalls": [],
+      "userValue": "Timely reminders for ADHD users",
+      "usageFrequency": "DAILY",
+      "createdAt": "2025-07-16T17:49:51.179Z"
+    },
+    {
+      "id": "cmd69ankb0007qjwh2zs5wb3c",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "name": "Smart Reminders",
+      "description": "ML-based reminder timing optimization",
+      "type": "ADVANCED",
+      "priority": "NICE_TO_HAVE",
+      "complexity": "VERY_COMPLEX",
+      "isMvp": false,
+      "dataFlow": null,
+      "dependencies": [
+        "TensorFlow.js",
+        "Usage patterns"
+      ],
+      "apiCalls": [],
+      "userValue": "Personalized reminder timing",
+      "usageFrequency": "WEEKLY",
+      "createdAt": "2025-07-16T17:49:51.179Z"
+    }
+  ],
+  "userPersonas": [
+    {
+      "id": "cmd69anke0008qjwhmrqhahcn",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "name": "ADHD Professional",
+      "description": "Working adult managing ADHD with medication and routines",
+      "type": "PRIMARY",
+      "profession": "Knowledge worker",
+      "experience": "10+ years managing ADHD",
+      "techSavvy": "INTERMEDIATE",
+      "primaryGoals": [
+        "Remember medication",
+        "Track work habits",
+        "Maintain routines"
+      ],
+      "painPoints": [
+        "Forgetting important tasks",
+        "Complex apps are overwhelming",
+        "Subscription fatigue"
+      ],
+      "jobsToBeDone": [
+        "Take meds on time",
+        "Track daily routines",
+        "See progress over time"
+      ],
+      "usageContext": "Throughout the day on mobile",
+      "frequency": "DAILY",
+      "createdAt": "2025-07-16T17:49:51.182Z"
+    }
+  ],
+  "pricePoints": [
+    {
+      "id": "cmd69ankh0009qjwhngnxjy7k",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "tier": "FREE",
+      "price": 0,
+      "currency": "USD",
+      "interval": null,
+      "features": [
+        "5 habits",
+        "Basic streaks",
+        "Daily reminders"
+      ],
+      "limits": {
+        "export": false,
+        "habits": 5,
+        "themes": 2
+      },
+      "targetPersona": "Casual users trying the app",
+      "value": "Risk-free trial",
+      "createdAt": "2025-07-16T17:49:51.185Z"
+    },
+    {
+      "id": "cmd69ankh000aqjwhswxe2xi4",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "tier": "PRO",
+      "price": 14.99,
+      "currency": "USD",
+      "interval": "ONE_TIME",
+      "features": [
+        "Unlimited habits",
+        "All features",
+        "Custom themes",
+        "Data export"
+      ],
+      "limits": {},
+      "targetPersona": "Committed ADHD users",
+      "value": "Full featured, no subscriptions",
+      "createdAt": "2025-07-16T17:49:51.185Z"
+    }
+  ],
+  "competitors": [],
+  "milestones": [
+    {
+      "id": "cmd69ankj000bqjwho55o7jfp",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "phase": "MVP",
+      "name": "Core Habit Tracking",
+      "description": "Basic habit tracking with streaks and notifications",
+      "weekNumber": 1,
+      "duration": 28,
+      "deliverables": [
+        "Habit CRUD",
+        "Streak calculation",
+        "Basic notifications",
+        "PWA setup"
+      ],
+      "successCriteria": [
+        "Can track 5 habits",
+        "Notifications work offline",
+        "Installs as PWA"
+      ],
+      "dependencies": [],
+      "createdAt": "2025-07-16T17:49:51.188Z"
+    },
+    {
+      "id": "cmd69ankk000cqjwh03ngm57e",
+      "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+      "phase": "ENHANCEMENT",
+      "name": "ADHD-Specific Features",
+      "description": "Templates, analytics, and ADHD-friendly UI improvements",
+      "weekNumber": 5,
+      "duration": 28,
+      "deliverables": [
+        "Habit templates",
+        "Progress analytics",
+        "Custom themes",
+        "Advanced reminders"
+      ],
+      "successCriteria": [
+        "10+ templates available",
+        "Charts render < 100ms",
+        "3+ theme options"
+      ],
+      "dependencies": [
+        "Core Habit Tracking"
+      ],
+      "createdAt": "2025-07-16T17:49:51.188Z"
+    }
+  ]
+}
+
+## FILE: FEATURES.json
+
+[
+  {
+    "id": "cmd69ankb0004qjwhgoc0fc1f",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Habit Creation & Management",
+    "description": "Create unlimited habits with custom names, emojis, and schedules",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "MODERATE",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "IndexedDB",
+      "Emoji picker"
+    ],
+    "apiCalls": [],
+    "userValue": "Core functionality for habit tracking",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0005qjwhk9txfxud",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Streak Tracking",
+    "description": "Visual streak counters with milestone celebrations",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "SIMPLE",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "Date calculations",
+      "Animation library"
+    ],
+    "apiCalls": [],
+    "userValue": "Motivation through visual progress",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0006qjwhsxx49yrn",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Offline Notifications",
+    "description": "Local notifications without server dependency",
+    "type": "CORE",
+    "priority": "MUST_HAVE",
+    "complexity": "COMPLEX",
+    "isMvp": true,
+    "dataFlow": null,
+    "dependencies": [
+      "Service Worker",
+      "Notification API"
+    ],
+    "apiCalls": [],
+    "userValue": "Timely reminders for ADHD users",
+    "usageFrequency": "DAILY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  },
+  {
+    "id": "cmd69ankb0007qjwh2zs5wb3c",
+    "blueprintId": "cmd69ank00001qjwh6xjqj1ki",
+    "name": "Smart Reminders",
+    "description": "ML-based reminder timing optimization",
+    "type": "ADVANCED",
+    "priority": "NICE_TO_HAVE",
+    "complexity": "VERY_COMPLEX",
+    "isMvp": false,
+    "dataFlow": null,
+    "dependencies": [
+      "TensorFlow.js",
+      "Usage patterns"
+    ],
+    "apiCalls": [],
+    "userValue": "Personalized reminder timing",
+    "usageFrequency": "WEEKLY",
+    "createdAt": "2025-07-16T17:49:51.179Z"
+  }
+]
+
+## FILE: PROJECT_DETAILS.json
+
+{
+  "project": {
+    "id": "cmd67627z000vqjs9b95usyvt",
+    "name": "Habit and routine tracker offline",
+    "description": "Streaks + custom emojis + offline alerts",
+    "useCase": "Habit and routine tracker offline",
+    "uniqueAngle": "Streaks + custom emojis + offline alerts",
+    "whyElite": "",
+    "createdAt": "2025-07-16T16:50:17.664Z",
+    "updatedAt": "2025-07-17T15:38:43.917Z"
+  },
+  "platform": {
+    "id": "cmd67629a001hqjs986r7zo84",
+    "name": "Mobile PWA",
+    "slug": "mobile-pwa"
+  },
+  "category": {
+    "id": "cmd6762iy005jqjs9ltioi2qe",
+    "name": "Business & Entrepreneurship",
+    "slug": "business-entrepreneurship"
+  },
+  "targetUsers": [
+    {
+      "id": "cmd676280000wqjs9ksmcqnn7",
+      "slug": "adhd-users",
+      "name": "ADHD Users",
+      "description": null,
+      "createdAt": "2025-07-16T16:50:17.665Z",
+      "updatedAt": "2025-07-16T17:05:27.563Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": "cmd67625w0006qjs9p4i68g1j",
+      "slug": "defi",
+      "name": "DeFi",
+      "category": "FEATURE",
+      "createdAt": "2025-07-16T16:50:17.589Z",
+      "updatedAt": "2025-07-16T17:05:28.435Z"
+    },
+    {
+      "id": "cmd67626g000cqjs9t5eof7k9",
+      "slug": "offline-first",
+      "name": "Offline-First",
+      "category": "FEATURE",
+      "createdAt": "2025-07-16T16:50:17.609Z",
+      "updatedAt": "2025-07-16T17:05:28.436Z"
+    }
+  ]
+}
+
+## FILE: README.md
+
+# Habit and routine tracker offline
+
+Streaks + custom emojis + offline alerts
+
+## Installation
+
+### Prerequisites
+- Node.js 22.5.0 or higher
+- npm or yarn
+
+### Setup
+```bash
+# Clone the repository
+git clone <repository-url>
+cd <project-name>
+
+# Install dependencies
+npm install
+```
+
+### Development
+```bash
+# Run in development mode
+npm run start:dev
+
+# Build for production
+npm run build
+
+# Run production build
+npm run start:prod
+```
+
+The API will be available at http://localhost:3000
+API documentation at http://localhost:3000/api
+
+## Tech Stack
+
+- **Language**: TypeScript
+- **Framework**: NestJS
+- **Build Tools**: npm, Webpack
+- **UI Library**: Chakra UI
+- **Storage**: PostgreSQL, Redis
+
+## Features
+
+- Core functionality
+
+## License
+
+MIT
+
+
+## FILE: TECHNICAL_STACK.json
+
+{
+  "language": "TypeScript",
+  "framework": "NestJS",
+  "buildTools": [
+    "npm",
+    "Webpack"
+  ],
+  "uiLibrary": "Chakra UI",
+  "storage": [
+    "PostgreSQL",
+    "Redis"
+  ],
+  "updatedAt": "2025-07-17T17:38:09.915Z"
+}
+
